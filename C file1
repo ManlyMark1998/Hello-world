@@ -1,0 +1,26 @@
+/* varibles & functions*/
+
+#include <stdio.h>
+int main(void)
+{
+  int add(int x,int y);  
+  int max(int x,int y);
+  int a,b,c,d;
+  printf("Input a and b:");
+  scanf("%d%d",&a,&b);
+  c=add(a,b);
+  d=max(a,b);
+  printf("a+b=%d\n",c);
+  printf("The max of a and b is %d\n",d);
+  return 0;
+}
+
+int add(int x,int y)
+{
+  return (x+y);
+}
+
+int max(int x,int y)
+{
+  return (x>y?x:y);
+}
