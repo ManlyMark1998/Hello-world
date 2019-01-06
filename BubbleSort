@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+void display(int arr[],int n)   // displays the array containning n elements.
+{
+  int i;
+  for( i = 0 ; i < n ; i++ )
+    printf("%d ",arr[i]);
+  printf("\n");
+}
+
+void swap(int *first,int *second)  // swap two values 
+{
+  int temp = *first;
+  *first = *second;
+  *second = temp;
+}
+
+void bubblesort(int arr[],int size)  // the function sorting the array .
+{
+  int i,j;
+  for(i=0;i<size-1;i++)
+    for(j=0;j<size-1;j++)
+      if(arr[j]>arr[j+1])
+        swap(&arr[j],&arr[j+1]);
+}
+
+int  main(int argc,const char *argv[])
+{
+  int n;
+  printf("Enter size of array:");
+  scanf("%d",&n);
+  
+  printf("Enter the elements of the array:");
+  int i,arr[n];
+  for(i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+   
+  printf("The original array is :");
+  display(arr,n);
+  
+  printf("The sorted array is:");
+  bubblesort(arr,n);
+  display(arr,n);
+  
+  return 0;
+}
